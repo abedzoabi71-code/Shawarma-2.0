@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0B">
+<title>מפגש הכפר · הזמנות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;900&family=Frank+Ruhl+Libre:wght@700;900&family=Cairo:wght@400;600;800&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="appbar">
+  <div class="brand">
+    <div class="brand__mark" aria-hidden="true">מ</div>
+    <div class="brand__text">
+      <strong data-t="brand"></strong>
+      <span data-t="brandSub"></span>
+    </div>
+  </div>
+  <nav class="lang" aria-label="Language">
+    <button type="button" data-lang="he">עב</button>
+    <button type="button" data-lang="ar">ع</button>
+    <button type="button" data-lang="en">EN</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section class="screen" id="screen-home">
+
+  <div class="hero">
+    <div class="hero__media"><img src="Shawarma%20Baguette.jpeg" alt=""><div class="hero__fade"></div></div>
+    <div class="hero__body">
+      <p class="pill" id="open-status"><span class="dot" aria-hidden="true"></span><span data-t="openUntil"></span></p>
+      <h1 data-t="heroTitle"></h1>
+      <p class="hero__sub" data-t="heroSub"></p>
+      <ul class="facts">
+        <li>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 17.5s5.4-5 5.4-9a5.4 5.4 0 10-10.8 0c0 4 5.4 9 5.4 9z"/><circle cx="10" cy="8.4" r="2"/></svg>
+          <span data-t="pickupOnly"></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7L3.2 8l4.7-.7z"/></svg>
+          <span data-t="rating"></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>
+          <span data-t="readyTime"></span>
+        </li>
+      </ul>
+      <div class="hero__cta">
+        <button type="button" class="btn btn--light" id="cta-menu" data-t="orderNow"></button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="cats" id="cats" aria-label="Menu categories"></nav>
+
+  <section class="pad discovery">
+    <div class="section-heading">
+      <div>
+        <h2 class="display" data-t="popularTitle"></h2>
+        <p class="muted" data-t="popularSub"></p>
+      </div>
+      <button type="button" class="link-button" id="reorder" hidden data-t="reorder"></button>
+    </div>
+    <div class="popular-rail" id="popular"></div>
+  </section>
+
+  <div class="pad" id="menu-section">
+    <h2 class="display" id="cat-title"></h2>
+    <p class="muted" data-t="menuHint"></p>
+    <ul class="menu" id="menu"></ul>
+  </div>
+
+  <section class="about">
+    <p class="about__eyebrow" data-t="aboutEyebrow"></p>
+    <h2 class="display" data-t="aboutTitle"></h2>
+    <p class="about__intro" data-t="aboutIntro"></p>
+    <div class="about__points">
+      <article class="about-point">
+        <span class="about-point__number">01</span>
+        <div><h3 data-t="aboutGrillTitle"></h3><p data-t="aboutGrillBody"></p></div>
+      </article>
+      <article class="about-point">
+        <span class="about-point__number">02</span>
+        <div><h3 data-t="aboutSaladsTitle"></h3><p data-t="aboutSaladsBody"></p></div>
+      </article>
+      <article class="about-point">
+        <span class="about-point__number">03</span>
+        <div><h3 data-t="aboutPickupTitle"></h3><p data-t="aboutPickupBody"></p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-section" aria-labelledby="gallery-title">
+    <p class="about__eyebrow" data-t="galleryEyebrow"></p>
+    <h2 class="display" id="gallery-title" data-t="galleryTitle"></h2>
+    <div class="gallery-placeholder">
+      <p data-t="galleryComingSoon"></p>
+    </div>
+  </section>
+
+  <section class="content-section" aria-labelledby="reviews-title">
+    <p class="about__eyebrow" data-t="reviewsEyebrow"></p>
+    <h2 class="display" id="reviews-title" data-t="reviewsTitle"></h2>
+    <div class="rating-card">
+      <strong class="rating-card__value">4.7</strong>
+      <span class="rating-card__label" data-t="reviewsRating"></span>
+      <a class="link-button" href="https://www.google.com/maps/search/?api=1&amp;query=Mifgash+HaKfar+Nein+Israel" target="_blank" rel="noopener" data-t="reviewsLink"></a>
+    </div>
+  </section>
+
+  <section class="content-section" aria-labelledby="map-title">
+    <p class="about__eyebrow" data-t="mapEyebrow"></p>
+    <h2 class="display" id="map-title" data-t="mapTitle"></h2>
+    <div class="waze-map">
+      <iframe
+        title="Waze live map centered on Nein, Israel"
+        src="https://embed.waze.com/iframe?zoom=15&amp;lat=32.6307267&amp;lon=35.3488686"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+    <p class="map-address" data-t="address"></p>
+    <a class="map-link" href="https://waze.com/ul?q=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%94%D7%9B%D7%A4%D7%A8" target="_blank" rel="noopener" data-t="mapDirections"></a>
+  </section>
+
+  <section class="content-section faq" aria-labelledby="faq-title">
+    <p class="about__eyebrow" data-t="faqEyebrow"></p>
+    <h2 class="display" id="faq-title" data-t="faqTitle"></h2>
+    <details>
+      <summary data-t="faqPickupQ"></summary>
+      <p data-t="faqPickupA"></p>
+    </details>
+    <details>
+      <summary data-t="faqTimeQ"></summary>
+      <p data-t="faqTimeA"></p>
+    </details>
+    <details>
+      <summary data-t="faqPaymentQ"></summary>
+      <p data-t="faqPaymentA"></p>
+    </details>
+    <details>
+      <summary data-t="faqKosherQ"></summary>
+      <p data-t="faqKosherA"></p>
+    </details>
+    <details>
+      <summary data-t="faqAllergensQ"></summary>
+      <p data-t="faqAllergensA"></p>
+    </details>
+  </section>
+
+  <footer class="foot">
+    <div class="display foot__name" data-t="brand"></div>
+    <p><span data-t="address"></span><br><span data-t="hours"></span><br><span data-t="phone"></span></p>
+    <p class="foot__info"><span data-t="foodStatus"></span><br><span data-t="allergenNotice"></span></p>
+    <div class="foot__links">
+      <a class="btn btn--ghost" data-contact="call" href="tel:+97246426033">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.2 3.5l2.5-.8 1.5 3.6-1.6 1.4a12 12 0 003.7 3.7l1.4-1.6 3.6 1.5-.8 2.5a2 2 0 01-2.1 1.4A12.5 12.5 0 014.8 5.6a2 2 0 011.4-2.1z"/></svg>
+        <span data-t="call"></span>
+      </a>
+      <!-- restaurant location on Waze -->
+      <a class="btn btn--ghost" href="https://waze.com/ul?q=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%94%D7%9B%D7%A4%D7%A8" target="_blank" rel="noopener">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 17.5s5.4-5 5.4-9a5.4 5.4 0 10-10.8 0c0 4 5.4 9 5.4 9z"/><circle cx="10" cy="8.4" r="2"/></svg>
+        <span>Waze</span>
+      </a>
+      <a class="btn btn--ghost" data-contact="whatsapp" href="https://wa.me/97246426033" target="_blank" rel="noopener">
+        <span data-t="whatsapp"></span>
+      </a>
+    </div>
+  </footer>
+</section>
+
+<!-- ============ ITEM BUILDER ============ -->
+<section class="screen" id="screen-item" hidden>
+  <div class="itemhero">
+    <div class="photo photo--flat" id="item-photo"></div>
+    <button type="button" class="round back" data-go="home" aria-label="Back">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg>
+    </button>
+  </div>
+  <div class="pad">
+    <div class="row-between">
+      <h2 class="display" id="item-name"></h2>
+      <strong class="price" id="item-price"></strong>
+    </div>
+    <p class="muted" id="item-desc"></p>
+
+    <h3 class="q" id="bread-question"><span data-t="breadQ"></span><em data-t="required"></em></h3>
+    <div class="grid2" id="breads"></div>
+
+    <h3 class="q" id="box-size-question" hidden><span data-t="boxSizeQ"></span></h3>
+    <div class="stack" id="box-sizes" hidden></div>
+
+    <h3 class="q" id="salads-question"><span data-t="saladsQ"></span><small data-t="saladsFree"></small></h3>
+    <div class="grid4" id="salads"></div>
+
+    <h3 class="q" id="fries-question" hidden><span data-t="friesQ"></span></h3>
+    <div class="stack" id="fries" hidden></div>
+
+    <h3 class="q" id="extras-question"><span data-t="extrasQ"></span></h3>
+    <div class="stack" id="extras"></div>
+
+    <h3 class="q"><span data-t="noteQ"></span></h3>
+    <textarea id="note" rows="2" class="note"></textarea>
+  </div>
+  <div class="bar">
+    <div class="stepper">
+      <button type="button" id="qty-minus" aria-label="−">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10h11"/></svg>
+      </button>
+      <span id="qty">1</span>
+      <button type="button" id="qty-plus" aria-label="+">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4.5v11M4.5 10h11"/></svg>
+      </button>
+    </div>
+    <button type="button" class="btn btn--dark btn--split" id="to-sides">
+      <span data-t="addToCart"></span><span id="item-total"></span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ CART ============ -->
+<section class="screen" id="screen-cart" hidden>
+  <div class="pad">
+    <button type="button" class="linkback" data-go="home">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg>
+      <span data-t="keepOrdering"></span>
+    </button>
+    <h2 class="display" data-t="cartTitle"></h2>
+    <ul class="lines" id="cart"></ul>
+    <div class="grid2 gap-s">
+      <button type="button" class="btn btn--dashed" data-category="drinks" data-t="addDrinks"></button>
+      <button type="button" class="btn btn--dashed" data-go="home" data-t="addMore"></button>
+    </div>
+    <dl class="totals" id="totals-cart"></dl>
+  </div>
+  <div class="bar">
+    <button type="button" class="btn btn--dark" data-go="checkout" data-t="toCheckout"></button>
+  </div>
+</section>
+
+<!-- ============ CHECKOUT ============ -->
+<section class="screen" id="screen-checkout" hidden>
+  <div class="pad">
+    <button type="button" class="linkback" data-go="cart">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg>
+      <span data-t="back"></span>
+    </button>
+    <h2 class="display" data-t="checkoutTitle"></h2>
+
+    <div class="pickup-info">
+      <strong data-t="pickupTitle"></strong>
+      <p data-t="pickupBody"></p>
+      <a href="https://waze.com/ul?q=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%94%D7%9B%D7%A4%D7%A8" target="_blank" rel="noopener" data-t="pickupDirections"></a>
+    </div>
+
+    <h3 class="q"><span data-t="customerNameQ"></span></h3>
+    <input class="field" id="customer-name" type="text" autocomplete="name">
+
+    <h3 class="q"><span data-t="customerPhoneQ"></span></h3>
+    <input class="field" id="customer-phone" type="tel" autocomplete="tel" inputmode="tel">
+
+    <h3 class="q"><span data-t="pickupTimeQ"></span></h3>
+    <select class="field" id="pickup-slot">
+      <option value="asap" data-t="pickupAsap"></option>
+      <option value="15" data-t="pickup15"></option>
+      <option value="30" data-t="pickup30"></option>
+      <option value="45" data-t="pickup45"></option>
+      <option value="later" data-t="pickupLater"></option>
+    </select>
+    <input class="field" id="pickup-later" type="datetime-local" hidden>
+
+    <h3 class="q"><span data-t="payQ"></span></h3>
+    <p class="payment-note" data-t="cashOnly"></p>
+
+    <dl class="totals" id="totals-checkout"></dl>
+    <p class="demo-note" data-t="demoNotice"></p>
+  </div>
+  <div class="bar">
+    <button type="button" class="btn btn--dark" id="place" disabled></button>
+  </div>
+</section>
+
+<!-- ============ CONFIRMATION ============ -->
+<section class="screen" id="screen-done" hidden>
+  <div class="done">
+    <div class="done__mark">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>
+    </div>
+    <h2 class="display" data-t="doneTitle"></h2>
+    <p class="muted" data-t="doneBody"></p>
+    <ol class="order-status" id="order-status"></ol>
+    <p class="demo-note" data-t="demoNotice"></p>
+    <dl class="receipt" id="receipt"></dl>
+    <button type="button" class="btn btn--outline" id="reset" data-t="newOrder"></button>
+  </div>
+</section>
+
+</main>
+
+<!-- floating cart bar (home only) -->
+<button type="button" class="cartbar" id="cartbar" hidden data-go="cart">
+  <span><em id="cartbar-count"></em><span data-t="viewCart"></span></span>
+  <strong id="cartbar-total"></strong>
+</button>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
